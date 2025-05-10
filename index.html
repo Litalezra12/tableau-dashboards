@@ -1,24 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Data Analytics Hub 📊✨</title>
+    <title>המערכת של ליטל 📊</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
             color: #333;
             line-height: 1.6;
+            direction: rtl;
         }
 
         header {
-            background: linear-gradient(90deg, #4158d0, #c850c0);
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
             color: white;
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 1rem;
+            animation: slideIn 1s ease-in;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
 
         h1 {
@@ -37,43 +48,98 @@
             border-radius: 15px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in;
         }
 
-        iframe {
-            width: 100%;
-            height: 500px;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            color: #ff7e5f;
+            border-bottom: 3px solid #feb47b;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin: 1rem 0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            color: white;
+            padding: 1rem 2rem;
             border: none;
             border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Interactive Data Analytics Hub 📊✨</h1>
-        <p>Discover Insights with Tableau Dashboards 🚀</p>
+        <h1>המערכת של ליטל 📊✨</h1>
+        <p>מערכת ויזואליזציה רלוונטית לקבלת החלטות בנתוני מכירות וניתוח ביצועים</p>
     </header>
 
     <div class="container">
         <div class="section">
-            <h2>Revenue Analysis by Region and Payment Method</h2>
-            <iframe src="https://public.tableau.com/views/RevenueAnalysisbyRegionandPaymentMethod/sheet3?:embed=y&:showVizHome=no" width="100%" height="500px"></iframe>
+            <h2>מטרות המערכת 🎯</h2>
+            <p>המערכת נועדה לספק תובנות עסקיות ממידע נתונים מגוון, לאפשר ניתוח מגמות והבנה מעמיקה של ביצועי מכירות ותחזיות עתידיות.</p>
         </div>
 
         <div class="section">
-            <h2>Profit Analysis by Category and Sales Channel</h2>
-            <iframe src="https://public.tableau.com/views/ProfitAnalysisbyCategoryandSalesChannel/ProfitAnalysisDashboard?:embed=y&:showVizHome=no" width="100%" height="500px"></iframe>
-        </div>
-
-        <div class="section">
-            <h2>Customer and Yearly Revenue Trends</h2>
-            <iframe src="https://public.tableau.com/views/CustomerandYearlyRevenueTrends/CustomerandYearlyRevenueAnalysis?:embed=y&:showVizHome=no" width="100%" height="500px"></iframe>
+            <h2>בחר מערכת לניתוח 📈</h2>
+            <div class="buttons">
+                <a href="dash1.html" class="btn">מערכת 1 - ניתוח הכנסות לפי אזור ושיטת תשלום</a>
+                <a href="dash2.html" class="btn">מערכת 2 - ניתוח רווחים לפי קטגוריות וערוץ מכירה</a>
+                <a href="dash3.html" class="btn">מערכת 3 - ניתוח מגמות לקוחות והכנסות שנתיות</a>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2025 Data Analytics Hub | Made with ❤️ and 📊</p>
+        <p>© 2025 המערכת של ליטל | נבנה עם 💖 ונתונים</p>
     </footer>
+
+    <script>
+        // Button hover animation
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseover', () => {
+                button.style.transform = 'translateY(-5px)';
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
-
