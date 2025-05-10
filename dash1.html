@@ -42,6 +42,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            text-align: center;
         }
 
         nav a {
@@ -50,6 +51,7 @@
             margin: 0 1rem;
             font-weight: bold;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -106,7 +108,7 @@
     </header>
 
     <nav>
-        <a href="index.html">חזור לדף הראשי</a>
+        <a href="#" onclick="goToHome()">חזור לדף הראשי</a>
     </nav>
 
     <div class="container">
@@ -135,11 +137,11 @@
     </footer>
 
     <script>
-        // Smooth scroll to tableau section
-        document.querySelector('nav a').addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        function goToHome() {
+            // מזהה את הנתיב של GitHub Pages ומפנה לדף הראשי
+            const baseUrl = window.location.origin + window.location.pathname.replace(/dash1.html$/, 'index.html');
+            window.location.href = baseUrl;
+        }
     </script>
 </body>
 </html>
